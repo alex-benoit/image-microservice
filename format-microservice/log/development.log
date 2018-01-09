@@ -1,0 +1,55 @@
+  [1m[36mPhoto Load (2.8ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY "photos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/" for ::1 at 2018-01-02 01:36:10 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/modify_format" for ::1 at 2018-01-02 01:36:47 +0000
+Processing by FormatsController#modify_format as PNG
+  Parameters: {"public_url"=>"https://alexb.ams3.digitaloceanspaces.com/store/b0dc45062f8a238bc1f1d02bb2a513cf.jpg"}
+Completed 200 OK in 325ms (Views: 0.3ms)
+
+
+Started POST "/modify_format" for ::1 at 2018-01-02 01:38:17 +0000
+Processing by FormatsController#modify_format as PNG
+  Parameters: {"public_url"=>"https://alexb.ams3.digitaloceanspaces.com/store/b0dc45062f8a238bc1f1d02bb2a513cf.jpg"}
+Completed 200 OK in 1ms (Views: 0.3ms)
+
+
+Started POST "/modify_format" for ::1 at 2018-01-02 01:40:24 +0000
+Processing by FormatsController#modify_format as PNG
+  Parameters: {"public_url"=>"https://alexb.ams3.digitaloceanspaces.com/store/b0dc45062f8a238bc1f1d02bb2a513cf.jpg"}
+Completed 201 Created in 1ms (Views: 0.3ms)
+
+
+Started POST "/modify_format" for ::1 at 2018-01-09 19:00:57 +0000
+Processing by FormatsController#modify_format as PNG
+  Parameters: {"public_url"=>"https://alexb.ams3.digitaloceanspaces.com/store/0694a8f4c19df54cac987d8ba47d5e68.jpg"}
+Completed 201 Created in 210ms (Views: 0.2ms)
+
+
