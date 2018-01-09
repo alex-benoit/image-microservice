@@ -16,19 +16,29 @@ class PhotosController < ActionController::API
 
   def show
     photo = Photo.find(params[:id])
-    if params['file_format'].present?
-      RabbitService.dispatch('format', {
-        id: photo.id,
-        public_url: photo.image.url(public: true)
-      })
-    else
-      render json: {
-        id: photo.id,
-        source_id: photo.image.id,
-        public_url: photo.image.url(public: true),
-        mime_type: photo.image.mime_type,
-        size: photo.image.metadata['size']
-      }
-    end
+    render json: photo_json(photo)
+  end
+
+  private
+
+  def photo_json(photo)
+    transformations = photo.photo_transformations.map { |t| transformation_json(t) }
+    {
+      id: photo.id,
+      source_id: photo.image.id,
+      public_url: photo.image.url(public: true),
+      size: photo.image.metadata['size'],
+      completed_transformation: transformations
+    }
+  end
+
+  def transformation_json(transformation)
+    {
+      id: transformation.id,
+      source_id: transformation.image.id,
+      public_url: transformation.image.url(public: true),
+      size: transformation.image.metadata['size'],
+      specs: transformation.specs
+    }
   end
 end

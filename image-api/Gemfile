@@ -7,8 +7,12 @@ gem 'puma'
 gem 'rack-cors'
 gem 'rails'
 
+gem 'rest-client'
+
 gem 'aws-sdk-s3'
 gem 'shrine'
+
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug'
